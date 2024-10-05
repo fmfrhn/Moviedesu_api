@@ -36,8 +36,8 @@ class WatchlistController extends Controller
         ]);
     }
     
-    public function deleteWatchlist(Request $request, int $id){
-        $result = Watchlist::where('id',$id)->delete();
+    public function deleteWatchlist(Request $request, string $imdb_id){
+        $result = Watchlist::where('imdb_id',$imdb_id)->delete();
 
         if($result){
             return response()->json([
@@ -50,7 +50,5 @@ class WatchlistController extends Controller
             'status' => false,
             'messsage'=> 'watchlist gagal dihapus, data tidak ditemukan!',
         ]);
-
-       
     }
 }

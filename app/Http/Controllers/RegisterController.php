@@ -20,14 +20,6 @@ class RegisterController extends Controller
             User::create($validatedData);
             return response()->json(['status'=>true , 'message'=>'Registrasi berhasil'],200);
         } 
-        // catch (ValidationException $e) {
-        //     // Tangkap exception validasi dan kembalikan pesan khusus
-        //     return response()->json([
-        //         'status' => false, 
-        //         'message' => 'Registrasi gagal!', 
-        //         'errors' => $e->error() // Mengembalikan pesan error dari validasi
-        //     ], 400);
-        // } 
         catch (\Exception $e) {
             // Tangani exception lainnya
             return response()->json(['status' => false, 'message' => 'email telah digunakan!'], 500);

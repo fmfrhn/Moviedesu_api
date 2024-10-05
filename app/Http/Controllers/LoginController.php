@@ -27,6 +27,8 @@ class LoginController extends Controller
                 'status' => true,
                 'message' => 'Login Berhasil',
                 'id' => $request->user()->id,
+                'email' => $request->user()->email,
+                'name' => $request->user()->name,
                 'token' => $token->plainTextToken
         ]);
         }

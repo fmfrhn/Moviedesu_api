@@ -14,7 +14,7 @@ Route::get('/movies', [MovieController::class, 'detail']);
 
 Route::get('/show_watchlist', [WatchlistController::class, 'showWatchlist']);
 Route::post('/add_watchlist', [WatchlistController::class, 'addWatchlist']);
-Route::delete('/delete_watchlist/{id}', [WatchlistController::class, 'deleteWatchlist']);
+Route::delete('/delete_watchlist/{imdb_id}', [WatchlistController::class, 'deleteWatchlist']);
 
 Route::get('/user', function (Request $request) {
     return $request->user();
