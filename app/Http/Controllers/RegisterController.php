@@ -18,7 +18,7 @@ class RegisterController extends Controller
             ],);
     
             User::create($validatedData);
-            return response()->json(['status'=>true , 'message'=>'Registrasi berhasil'],200);
+            return response()->json(['status'=>true , 'message'=>'Registrasi berhasil']);
         } 
         catch (\Exception $e) {
             // Tangani exception lainnya
